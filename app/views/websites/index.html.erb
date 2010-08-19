@@ -1,0 +1,34 @@
+<h1>Listing websites</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Image</th>
+    <th>Website</th>
+    <th>Industry</th>
+    <th>Launched</th>
+    <th>Features</th>
+    <th>Challenge</th>
+    <th>Solution</th>
+  </tr>
+
+<% @websites.each do |website| %>
+  <tr>
+    <td><%=h website.title %></td>
+    <td><%=h website.image %></td>
+    <td><%=h website.website %></td>
+    <td><%=h website.industry %></td>
+    <td><%=h website.launched %></td>
+    <td><%=h website.features %></td>
+    <td><%=h website.challenge %></td>
+    <td><%=h website.solution %></td>
+    <td><%= link_to 'Show', website %></td>
+    <td><%= link_to 'Edit', edit_website_path(website) %></td>
+    <td><%= link_to 'Destroy', website, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New website', new_website_path %>

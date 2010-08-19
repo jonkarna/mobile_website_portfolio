@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  category: 
+  website: 
+  position: 1
+
+two:
+  category: 
+  website: 
+  position: 1
