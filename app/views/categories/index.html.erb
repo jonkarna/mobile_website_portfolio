@@ -1,20 +1,12 @@
-<h1>Listing categories</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
-
-<% @categories.each do |category| %>
-  <tr>
-    <td><%=h category.name %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<div id="header">
+	<h1>Sitepro Portfolio</h1>
+</div>
+<% if false %>
+	<p style="color: green"><%= flash[:notice] %></p>
 <% end %>
-</table>
-
-<br />
-
+<ul>
+	<% @categories.each do |category| %>
+		<li><%= link_to category.name, category %></li>
+	<% end %>
+</ul>
 <%= link_to 'New category', new_category_path %>

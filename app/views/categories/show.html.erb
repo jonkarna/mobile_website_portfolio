@@ -1,13 +1,14 @@
-<p>
-  <b>Name:</b>
-  <%=h @category.name %>
-</p>
-
+<div id="header">
+	<%= link_to 'Back', categories_path, :class => 'nav', :id => 'backButton' %>
+	<h1>Sitepro Portfolio</h1>
+</div>
+<h1><%=h @category.name %></h1>
 <ul>
-	<% for website in @category.websites %>
-		<li><%= website.title %></li>
+	<% for categorization in @category.categorizations %>
+		<li><%= link_to categorization.website.title, category_categorization_path(@category, categorization) %></li>
 	<% end %>
 </ul>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Destroy', @category, :confirm => 'Are you sure?', :method => :delete %> |
 <%= link_to 'Back', categories_path %>

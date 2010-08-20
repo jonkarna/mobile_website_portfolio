@@ -12,6 +12,12 @@ class CategorizationsController < ApplicationController
 		end
 	end
 	
+	def show
+		@category = Category.find(params[:category_id])
+		@categorization = Categorization.find(params[:id])
+		@website = @categorization.website
+	end
+	
 	def create
 		@category = Category.find(params[:category_id])
 		@website = Website.find(params[:website_id])

@@ -8143,3 +8143,648 @@ Rendering categories/edit
   [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 5) AND (("categorizations".category_id = 2)) ORDER BY position LIMIT 1[0m
   [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 6) AND (("categorizations".category_id = 2)) ORDER BY position LIMIT 1[0m
 Completed in 62ms (View: 47, DB: 0) | 200 OK [http://localhost/categories/2/edit]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 14:57:36) [GET]
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 125ms (View: 78, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 15:39:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mWebsite Load (15.6ms)[0m   [0;1mSELECT "websites".* FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE (("categorizations".category_id = 1)) ORDER BY position[0m
+Completed in 47ms (View: 31, DB: 16) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategoriesController#edit (for 127.0.0.1 at 2010-08-20 15:39:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/edit
+  [4;36;1mCategorization Load (0.0ms)[0m   [0;1mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 1) ORDER BY position[0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 2) AND (("categorizations".category_id = 1)) ORDER BY position LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 3) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 3) AND (("categorizations".category_id = 1)) ORDER BY position LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 2) AND (("categorizations".category_id = 1)) ORDER BY position LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 3) AND (("categorizations".category_id = 1)) ORDER BY position LIMIT 1[0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 5) AND (("categorizations".category_id = 1)) ORDER BY position LIMIT 1[0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 6) AND (("categorizations".category_id = 1)) ORDER BY position LIMIT 1[0m
+Completed in 141ms (View: 78, DB: 0) | 200 OK [http://localhost/categories/1/edit]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 15:49:14) [GET]
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 15:49:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".* FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE (("categorizations".category_id = 2)) ORDER BY position[0m
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/categories/2]
+
+
+Processing CategoriesController#edit (for 127.0.0.1 at 2010-08-20 15:49:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categories/edit
+  [4;36;1mCategorization Load (0.0ms)[0m   [0;1mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 2) ORDER BY position[0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" [0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 2) AND (("categorizations".category_id = 2)) ORDER BY position LIMIT 1[0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 3) AND (("categorizations".category_id = 2)) ORDER BY position LIMIT 1[0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 5) AND (("categorizations".category_id = 2)) ORDER BY position LIMIT 1[0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 6) AND (("categorizations".category_id = 2)) ORDER BY position LIMIT 1[0m
+
+ActionView::TemplateError (undefined local variable or method `category' for #<ActionView::Base:0x46cd0d0>) on line #44 of app/views/categories/edit.html.erb:
+41: <% end %>
+42: <br />
+43: <%= link_to 'Show', @category %> |
+44: <%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %> |
+45: <%= link_to 'Back', categories_path %>
+
+    app/views/categories/edit.html.erb:44
+
+Rendered rescues/_trace (78.1ms)
+Rendered rescues/_request_and_response (93.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CategoriesController#edit (for 127.0.0.1 at 2010-08-20 15:49:35) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categories/edit
+  [4;35;1mCategorization Load (0.0ms)[0m   [0mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 2) ORDER BY position[0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 2) AND (("categorizations".category_id = 2)) ORDER BY position LIMIT 1[0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 3) AND (("categorizations".category_id = 2)) ORDER BY position LIMIT 1[0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 5) AND (("categorizations".category_id = 2)) ORDER BY position LIMIT 1[0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 6) AND (("categorizations".category_id = 2)) ORDER BY position LIMIT 1[0m
+Completed in 78ms (View: 62, DB: 0) | 200 OK [http://localhost/categories/2/edit]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 15:50:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".* FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE (("categorizations".category_id = 2)) ORDER BY position[0m
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/categories/2]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 15:50:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".* FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE (("categorizations".category_id = 2)) ORDER BY position[0m
+Completed in 47ms (View: 47, DB: 0) | 200 OK [http://localhost/categories/2]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 15:50:55) [GET]
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 15:51:40) [GET]
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 94ms (View: 62, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 15:52:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".* FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE (("categorizations".category_id = 1)) ORDER BY position[0m
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 15:54:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".* FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE (("categorizations".category_id = 1)) ORDER BY position[0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 15:54:30) [GET]
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 15:59:36) [GET]
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 109ms (View: 62, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 16:01:00) [GET]
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 16:01:27) [GET]
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 109ms (View: 94, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 16:01:54) [GET]
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 109ms (View: 94, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 16:02:35) [GET]
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:02:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".* FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE (("categorizations".category_id = 1)) ORDER BY position[0m
+Completed in 62ms (View: 47, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 16:02:38) [GET]
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 16:03:03) [GET]
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#new (for 127.0.0.1 at 2010-08-20 16:03:08) [GET]
+Rendering template within layouts/application
+Rendering categories/new
+Completed in 94ms (View: 62, DB: 0) | 200 OK [http://localhost/categories/new]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:03:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".* FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE (("categorizations".category_id = 1)) ORDER BY position[0m
+Completed in 125ms (View: 31, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 16:03:18) [GET]
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:03:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT "websites".* FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE (("categorizations".category_id = 1)) ORDER BY position[0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 16:03:21) [GET]
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:03:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".* FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE (("categorizations".category_id = 1)) ORDER BY position[0m
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 16:03:31) [GET]
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 16:04:13) [GET]
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:04:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".* FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE (("categorizations".category_id = 1)) ORDER BY position[0m
+Completed in 141ms (View: 47, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing WebsitesController#show (for 127.0.0.1 at 2010-08-20 16:04:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering websites/show
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/websites/2]
+
+
+Processing WebsitesController#show (for 127.0.0.1 at 2010-08-20 16:04:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering websites/show
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/websites/2]
+
+
+Processing WebsitesController#show (for 127.0.0.1 at 2010-08-20 16:04:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering websites/show
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/websites/2]
+
+
+Processing WebsitesController#show (for 127.0.0.1 at 2010-08-20 16:04:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering websites/show
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/websites/2]
+
+
+Processing WebsitesController#index (for 127.0.0.1 at 2010-08-20 16:04:47) [GET]
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" [0m
+Rendering template within layouts/application
+Rendering websites/index
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/websites]
+
+
+Processing WebsitesController#show (for 127.0.0.1 at 2010-08-20 16:05:53) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering websites/show
+Completed in 78ms (View: 16, DB: 0) | 200 OK [http://localhost/websites/2]
+
+
+Processing WebsitesController#show (for 127.0.0.1 at 2010-08-20 16:05:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering websites/show
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/websites/2]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:11:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;35;1mCategorization Load (0.0ms)[0m   [0mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 1) ORDER BY position[0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+
+ActionView::TemplateError (undefined method `categorization_path' for #<ActionView::Base:0x43b9eb8>) on line #8 of app/views/categories/show.html.erb:
+5: <h1><%=h @category.name %></h1>
+6: <ul>
+7: 	<% for categorization in @category.categorizations %>
+8: 		<li><%= link_to categorization.website.title, categorization %></li>
+9: 	<% end %>
+10: </ul>
+11: 
+
+    app/views/categories/show.html.erb:8
+    app/views/categories/show.html.erb:7
+    app/controllers/categories_controller.rb:18:in `show'
+
+Rendered rescues/_trace (93.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:11:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mCategorization Load (0.0ms)[0m   [0;1mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 1) ORDER BY position[0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 3) [0m
+Completed in 47ms (View: 47, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategorizationsController#show (for 127.0.0.1 at 2010-08-20 16:11:47) [GET]
+  Parameters: {"id"=>"18", "category_id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mCategorization Load (0.0ms)[0m   [0;1mSELECT * FROM "categorizations" WHERE ("categorizations"."id" = 18) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categorizations/show
+Completed in 203ms (View: 16, DB: 0) | 200 OK [http://localhost/categories/1/categorizations/18]
+
+
+Processing CategorizationsController#show (for 127.0.0.1 at 2010-08-20 16:12:17) [GET]
+  Parameters: {"id"=>"18", "category_id"=>"1"}
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mCategorization Load (0.0ms)[0m   [0mSELECT * FROM "categorizations" WHERE ("categorizations"."id" = 18) [0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categorizations/show
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://localhost/categories/1/categorizations/18]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:12:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mCategorization Load (0.0ms)[0m   [0;1mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 1) ORDER BY position[0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 3) [0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategorizationsController#show (for 127.0.0.1 at 2010-08-20 16:12:21) [GET]
+  Parameters: {"id"=>"18", "category_id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mCategorization Load (0.0ms)[0m   [0;1mSELECT * FROM "categorizations" WHERE ("categorizations"."id" = 18) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categorizations/show
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/categories/1/categorizations/18]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:12:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;35;1mCategorization Load (0.0ms)[0m   [0mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 1) ORDER BY position[0m
+  [4;36;1mWebsite Load (15.6ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 3) [0m
+Completed in 31ms (View: 16, DB: 16) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategorizationsController#show (for 127.0.0.1 at 2010-08-20 16:12:26) [GET]
+  Parameters: {"id"=>"18", "category_id"=>"1"}
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mCategorization Load (0.0ms)[0m   [0mSELECT * FROM "categorizations" WHERE ("categorizations"."id" = 18) [0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categorizations/show
+Completed in 31ms (View: 0, DB: 0) | 200 OK [http://localhost/categories/1/categorizations/18]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:12:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mCategorization Load (0.0ms)[0m   [0;1mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 1) ORDER BY position[0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 3) [0m
+Completed in 141ms (View: 31, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategorizationsController#show (for 127.0.0.1 at 2010-08-20 16:12:29) [GET]
+  Parameters: {"id"=>"19", "category_id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mCategorization Load (0.0ms)[0m   [0;1mSELECT * FROM "categorizations" WHERE ("categorizations"."id" = 19) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering categorizations/show
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/categories/1/categorizations/19]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:12:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;35;1mCategorization Load (0.0ms)[0m   [0mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 1) ORDER BY position[0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 3) [0m
+Completed in 47ms (View: 47, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategoriesController#edit (for 127.0.0.1 at 2010-08-20 16:12:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/edit
+  [4;35;1mCategorization Load (0.0ms)[0m   [0mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 1) ORDER BY position[0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 2) AND (("categorizations".category_id = 1)) ORDER BY position LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 3) [0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 3) AND (("categorizations".category_id = 1)) ORDER BY position LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 2) AND (("categorizations".category_id = 1)) ORDER BY position LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 3) AND (("categorizations".category_id = 1)) ORDER BY position LIMIT 1[0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 5) AND (("categorizations".category_id = 1)) ORDER BY position LIMIT 1[0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT "websites".id FROM "websites" INNER JOIN "categorizations" ON "websites".id = "categorizations".website_id WHERE ("websites"."id" = 6) AND (("categorizations".category_id = 1)) ORDER BY position LIMIT 1[0m
+Completed in 78ms (View: 62, DB: 0) | 200 OK [http://localhost/categories/1/edit]
+
+
+Processing CategorizationsController#show (for 127.0.0.1 at 2010-08-20 16:13:58) [GET]
+  Parameters: {"id"=>"18", "category_id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mCategorization Load (0.0ms)[0m   [0;1mSELECT * FROM "categorizations" WHERE ("categorizations"."id" = 18) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categorizations/show
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/categories/1/categorizations/18]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:14:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;35;1mCategorization Load (0.0ms)[0m   [0mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 1) ORDER BY position[0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 3) [0m
+Completed in 109ms (View: 94, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategorizationsController#show (for 127.0.0.1 at 2010-08-20 16:21:03) [GET]
+  Parameters: {"id"=>"18", "category_id"=>"1"}
+  [4;36;1mCategory Load (15.6ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mCategorization Load (0.0ms)[0m   [0mSELECT * FROM "categorizations" WHERE ("categorizations"."id" = 18) [0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categorizations/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.attributes) on line #13 of app/views/categorizations/show.html.erb:
+10: 	<li class="arrow"><h3>Website:</h3><a href="http://<%=h @website.title %>" title=""><%=h @website.title %></a></li>
+11: 	<li><h3>Industry:</h3> <big><%=h @website.industry %></big></li>
+12: 	<li><h3>Launched:</h3> <big><%=h @website.launched %></big></li>
+13: 	<li><h3>Features:</h3> <big><%= @flashrecord.attributes["features"] %></big></li>
+14: </ul>
+15: <h1>Challenge</h1>
+16: <ul class="data">
+
+    app/views/categorizations/show.html.erb:13
+
+Rendered rescues/_trace (78.1ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CategorizationsController#show (for 127.0.0.1 at 2010-08-20 16:21:55) [GET]
+  Parameters: {"id"=>"18", "category_id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mCategorization Load (0.0ms)[0m   [0;1mSELECT * FROM "categorizations" WHERE ("categorizations"."id" = 18) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categorizations/show
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/categories/1/categorizations/18]
+
+
+Processing CategorizationsController#show (for 127.0.0.1 at 2010-08-20 16:21:55) [GET]
+  Parameters: {"id"=>"18", "category_id"=>"1"}
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mCategorization Load (0.0ms)[0m   [0mSELECT * FROM "categorizations" WHERE ("categorizations"."id" = 18) [0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categorizations/show
+Completed in 109ms (View: 16, DB: 0) | 200 OK [http://localhost/categories/1/categorizations/18]
+
+
+Processing CategorizationsController#show (for 127.0.0.1 at 2010-08-20 16:22:40) [GET]
+  Parameters: {"id"=>"18", "category_id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mCategorization Load (0.0ms)[0m   [0;1mSELECT * FROM "categorizations" WHERE ("categorizations"."id" = 18) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categorizations/show
+Completed in 141ms (View: 16, DB: 0) | 200 OK [http://localhost/categories/1/categorizations/18]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:23:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;35;1mCategorization Load (0.0ms)[0m   [0mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 1) ORDER BY position[0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 3) [0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 16:23:13) [GET]
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:26:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mCategorization Load (0.0ms)[0m   [0;1mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 1) ORDER BY position[0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 3) [0m
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 16:26:14) [GET]
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:26:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;35;1mCategorization Load (0.0ms)[0m   [0mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 1) ORDER BY position[0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 3) [0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategorizationsController#show (for 127.0.0.1 at 2010-08-20 16:26:16) [GET]
+  Parameters: {"id"=>"18", "category_id"=>"1"}
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mCategorization Load (0.0ms)[0m   [0mSELECT * FROM "categorizations" WHERE ("categorizations"."id" = 18) [0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categorizations/show
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://localhost/categories/1/categorizations/18]
+
+
+Processing CategorizationsController#show (for 127.0.0.1 at 2010-08-20 16:26:16) [GET]
+  Parameters: {"id"=>"18", "category_id"=>"1"}
+  [4;35;1mCategory Load (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mCategorization Load (0.0ms)[0m   [0;1mSELECT * FROM "categorizations" WHERE ("categorizations"."id" = 18) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering categorizations/show
+Completed in 47ms (View: 0, DB: 0) | 200 OK [http://localhost/categories/1/categorizations/18]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 16:31:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Load (15.6ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;35;1mCategorization Load (0.0ms)[0m   [0mSELECT * FROM "categorizations" WHERE ("categorizations".category_id = 1) ORDER BY position[0m
+  [4;36;1mWebsite Load (0.0ms)[0m   [0;1mSELECT * FROM "websites" WHERE ("websites"."id" = 2) [0m
+  [4;35;1mWebsite Load (0.0ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 3) [0m
+Completed in 47ms (View: 31, DB: 16) | 200 OK [http://localhost/categories/1]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 16:31:51) [GET]
+  [4;36;1mCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/categories]

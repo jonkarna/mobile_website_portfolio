@@ -1,0 +1,29 @@
+<div id="header">
+	<%= link_to 'Back', category_path(@category), :class => 'nav', :id => 'backButton' %>
+	<h1>Sitepro Portfolio</h1>
+</div>
+
+<h1><%=h @website.title %></h1>
+<br />
+<img alt="" src="<%=h @website.image %>" />
+<ul class="field">
+	<li class="arrow"><h3>Website:</h3><a href="http://<%=h @website.website %>" title=""><%=h @website.website %></a></li>
+	<li><h3>Industry:</h3> <big><%=h @website.industry %></big></li>
+	<li><h3>Launched:</h3> <big><%=h @website.launched %></big></li>
+	<li><h3>Features:</h3> <big><%=h @website.features %></big></li>
+</ul>
+<h1>Challenge</h1>
+<ul class="data">
+	<li>
+		<p><%=h @website.challenge %></p>
+	</li>
+</ul>
+<h1>Solution</h1>
+<ul class="data">
+	<li>
+		<p><%=h @website.solution %></p>
+	</li>
+</ul>
+
+<%= link_to 'Edit', edit_website_path(@website) %> |
+<%= link_to 'Back', websites_path %>
