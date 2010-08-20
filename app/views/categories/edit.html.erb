@@ -6,40 +6,39 @@
 		<%= f.label :name %><br />
 		<%= f.text_field :name %>
 	</p>
-	<p>
-		<h2>Websites</h2>
-		<% if false %>
-			<!-- typical way to handle many-to-many -->
+	<% if false %>
+		<!-- typical way to handle many-to-many -->
+		<p>
+			<h2>Websites</h2>
 			<%= f.label :websites %><br />
 			<%= hidden_field_tag "category[website_ids][]", "" %>
 			<% for website in Website.find(:all) %>
 				<%= check_box_tag "category[website_ids][]", website.id, @category.websites.include?(website) %>
 				<%= website.title %><br />
 			<% end %>
-		<% end %>
-		
-	</p>
+		</p>
+	<% end %>
 	<p>
 		<%= f.submit 'Update' %>
 	</p>
 <% end %>
 
-<h3>Included Websites</h3>
-		<% if @category.categorizations.length > 0 %>
-			<% for categorization in @category.categorizations %>
-				<% if @category.websites.include?(categorization.website) %>
-					<%= categorization.website.title %><%=reorder_buttons categorization %><br />
-				<% end %>
-			<% end %>
-		<% else %>
-			No websites
+<h3>Categorizations</h3>
+<% if @category.categorizations.length > 0 %>
+	<% for categorization in @category.categorizations %>
+		<% if @category.websites.include?(categorization.website) %>
+			<%= categorization.website.title %> <%=reorder_buttons categorization %><br />
 		<% end %>
-		<h3>Other Websites</h3>
-		<% for website in Website.find(:all) %>
-			<% unless @category.websites.include?(website) %>
-				<%= website.title %><%= link_to 'Add to Category', category_categorizations_path(@category, :website_id => website.id), :method => :post %><br />
-			<% end %>
-		<% end %>
-
+	<% end %>
+<% else %>
+	No categorizations
+<% end %>
+<h3>Other Websites</h3>
+<% for website in Website.find(:all) %>
+	<% unless @category.websites.include?(website) %>
+		<%= website.title %> [ <%= link_to 'Add', category_categorizations_path(@category, :website_id => website.id), :method => :post %> ]<br />
+	<% end %>
+<% end %>
+<br />
 <%= link_to 'Show', @category %> |
 <%= link_to 'Back', categories_path %>

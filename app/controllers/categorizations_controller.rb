@@ -26,12 +26,11 @@ class CategorizationsController < ApplicationController
 			render :action => "new"
 		end
 	end
-
-	# DELETE /categorizations/1
-	# DELETE /categorizations/1.xml
+	
 	def destroy
+		@category = Category.find(params[:category_id])
 		@categorization = Categorization.find(params[:id])
 		@categorization.destroy
-		redirect_to(categorizations_url)
+		redirect_to(edit_category_path(@category))
 	end
 end
