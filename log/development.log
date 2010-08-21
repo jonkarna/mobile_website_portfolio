@@ -8788,3 +8788,90 @@ Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 16:31:51) [GE
 Rendering template within layouts/application
 Rendering categories/index
 Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2010-08-20 21:11:19) [GET]
+  [4;36;1mCategory Load (2.0ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/application
+Rendering categories/index
+Completed in 299ms (View: 175, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 21:11:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCategory Load (1.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `acts_as_list' for #<Class:0x6e0ba58>) on line #7 of app/views/categories/show.html.erb:
+4: </div>
+5: <h1><%=h @category.name %></h1>
+6: <ul>
+7: 	<% for categorization in @category.categorizations %>
+8: 		<li><%= link_to categorization.website.title, category_categorization_path(@category, categorization) %></li>
+9: 	<% end %>
+10: </ul>
+
+    app/models/categorization.rb:4
+    app/views/categories/show.html.erb:7
+    app/controllers/categories_controller.rb:18:in `show'
+
+Rendered rescues/_trace (162.0ms)
+Rendered rescues/_request_and_response (17.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2010-08-20 21:11:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCategory Load (1.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering categories/show
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `acts_as_list' for #<Class:0x6e910c0>) on line #7 of app/views/categories/show.html.erb:
+4: </div>
+5: <h1><%=h @category.name %></h1>
+6: <ul>
+7: 	<% for categorization in @category.categorizations %>
+8: 		<li><%= link_to categorization.website.title, category_categorization_path(@category, categorization) %></li>
+9: 	<% end %>
+10: </ul>
+
+    app/models/categorization.rb:4
+    app/views/categories/show.html.erb:7
+    app/controllers/categories_controller.rb:18:in `show'
+
+Rendered rescues/_trace (170.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
