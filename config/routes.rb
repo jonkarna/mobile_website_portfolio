@@ -2,6 +2,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :websites
   map.resources :categories, :has_many => :categorizations, :collection => { :move_higher => :post }
   
+  map.logout "/logout", {:controller => "categories", :action => "logout"}
+  
   %w{move_higher move_lower move_to_top move_to_bottom}.each do |action|
     instance_eval <<-EOF
       map.#{action}_category_categorization "categories/:category_id/categorizations/:id/#{action}", {:controller => "categorizations", :action => "#{action}"}

@@ -1,7 +1,3 @@
-<div id="header">
-	<%= link_to 'Back', categories_path, :class => 'nav', :id => 'backButton' %>
-	<h1>Sitepro Portfolio</h1>
-</div>
 <h1><%=h @category.name %></h1>
 <ul>
 	<% for categorization in @category.categorizations %>

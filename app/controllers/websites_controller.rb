@@ -1,4 +1,6 @@
 class WebsitesController < ApplicationController
+  before_filter :authenticate
+  
   # GET /websites
   # GET /websites.xml
   def index

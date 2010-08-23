@@ -1,4 +1,7 @@
 class CategorizationsController < ApplicationController
+	before_filter :authenticate, :except => [:show]
+	before_filter :define_back_link
+	
 	%w{move_higher move_lower move_to_top move_to_bottom}.each do |action|
 		define_method action do
 			@categorization = Categorization.find(params[:id])
@@ -38,5 +41,11 @@ class CategorizationsController < ApplicationController
 		@categorization = Categorization.find(params[:id])
 		@categorization.destroy
 		redirect_to(edit_category_path(@category))
+	end
+	
+	private
+	def define_back_link
+		@category = Category.find(params[:category_id])
+		category_path(@category)
 	end
 end

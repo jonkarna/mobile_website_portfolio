@@ -1,4 +1,14 @@
 class CategoriesController < ApplicationController
+  before_filter :authenticate, :except => [:index, :show]
+  before_filter :define_back_link, :except => [:index]
+  
+  def logout
+    session[:login_counter] = session[:login_counter]
+    session[:realm] = session[:session_id].to_s + '_' + session[:login_counter].to_s
+    session[:current_user] = nil
+    redirect_to root_url
+  end
+  
   # GET /categories
   # GET /categories.xml
   def index
@@ -81,5 +91,10 @@ class CategoriesController < ApplicationController
       format.html { redirect_to(categories_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  private
+  def define_back_link
+    @back_link = categories_path
   end
 end
