@@ -1,43 +1,5 @@
-<p>
-  <b>Title:</b>
-  <%=h @website.title %>
-</p>
-
-<p>
-  <b>Image:</b>
-  <%=h @website.image %>
-</p>
-
-<p>
-  <b>Website:</b>
-  <%=h @website.website %>
-</p>
-
-<p>
-  <b>Industry:</b>
-  <%=h @website.industry %>
-</p>
-
-<p>
-  <b>Launched:</b>
-  <%=h @website.launched %>
-</p>
-
-<p>
-  <b>Features:</b>
-  <%=h @website.features %>
-</p>
-
-<p>
-  <b>Challenge:</b>
-  <%=h @website.challenge %>
-</p>
-
-<p>
-  <b>Solution:</b>
-  <%=h @website.solution %>
-</p>
-
-
-<%= link_to 'Edit', edit_website_path(@website) %> |
-<%= link_to 'Back', websites_path %>
+<%= render :partial => "websites/website" %>
+<ul class="individual">
+	<li><%= link_to 'Edit', edit_website_path(@website) %></li>
+	<li><%= link_to 'Delete', @website, :confirm => 'Are you sure?', :method => :delete %></li>
+</ul>

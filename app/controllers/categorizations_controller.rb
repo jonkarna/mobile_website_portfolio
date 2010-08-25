@@ -7,7 +7,7 @@ class CategorizationsController < ApplicationController
 			@categorization = Categorization.find(params[:id])
 			@categorization.send(action)
 			if @categorization.save
-				flash[:notice] = "The website was reordered. #{action}"
+				flash[:notice] = "The website was reordered."
 			else
 				flash[:notice] = "Error."
 			end
@@ -16,6 +16,12 @@ class CategorizationsController < ApplicationController
 	end
 	
 	def show
+		@category = Category.find(params[:category_id])
+		@categorization = Categorization.find(params[:id])
+		@website = @categorization.website
+	end
+	
+	def edit
 		@category = Category.find(params[:category_id])
 		@categorization = Categorization.find(params[:id])
 		@website = @categorization.website
@@ -46,6 +52,6 @@ class CategorizationsController < ApplicationController
 	private
 	def define_back_link
 		@category = Category.find(params[:category_id])
-		category_path(@category)
+		@back_link = category_path(@category)
 	end
 end

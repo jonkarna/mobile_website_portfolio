@@ -3,8 +3,9 @@
 		<li><%= link_to category.name, category %></li>
 	<% end %>
 </ul>
-<% if current_user == 'admin' %>
-	<%= link_to 'New category', new_category_path %>
+<% if logged_in? %>
+	<ul class="individual">
+		<li><%= link_to 'New category', new_category_path %></li>
+		<li><%= link_to 'Edit Websites', websites_path %></li>
+	</ul>
 <% end %>
-
-<%= session.inspect %>

@@ -1,8 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :websites
+  map.resources :websites, :except => [:show]
   map.resources :categories, :has_many => :categorizations, :collection => { :move_higher => :post }
   
-  map.logout "/logout", {:controller => "categories", :action => "logout"}
+  map.resources :sessions, :only => [:new, :create, :destroy]
+  map.login "/login", :controller => :sessions, :action => :new
+  map.logout "/logout", :controller => :sessions, :action => :destroy
   
   %w{move_higher move_lower move_to_top move_to_bottom}.each do |action|
     instance_eval <<-EOF

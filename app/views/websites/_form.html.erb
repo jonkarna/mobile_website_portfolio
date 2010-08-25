@@ -1,0 +1,39 @@
+<% form_for(@website) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :image %><br />
+    <%= f.text_field :image %>
+  </p>
+  <p>
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </p>
+  <p>
+    <%= f.label :industry %><br />
+    <%= f.text_field :industry %>
+  </p>
+  <p>
+    <%= f.label :launched %><br />
+    <%= f.text_field :launched %>
+  </p>
+  <p>
+    <%= f.label :features %><br />
+    <%= f.text_field :features %>
+  </p>
+  <p>
+    <%= f.label :challenge %><br />
+    <%= f.text_field :challenge %>
+  </p>
+  <p>
+    <%= f.label :solution %><br />
+    <%= f.text_field :solution %>
+  </p>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>

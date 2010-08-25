@@ -1,45 +1,28 @@
 <h1>Editing category</h1>
-
-<% form_for(@category) do |f| %>
-	<%= f.error_messages %>
-	<p>
-		<%= f.label :name %><br />
-		<%= f.text_field :name %>
-	</p>
-	<% if false %>
-		<!-- typical way to handle many-to-many -->
-		<p>
-			<h2>Websites</h2>
-			<%= f.label :websites %><br />
-			<%= hidden_field_tag "category[website_ids][]", "" %>
-			<% for website in Website.find(:all) %>
-				<%= check_box_tag "category[website_ids][]", website.id, @category.websites.include?(website) %>
-				<%= website.title %><br />
+<%= render :partial => "categories/form" %>
+<div class="box-header">Categorizations</div>
+<div class="box">
+	<% if @category.categorizations.length > 0 %>
+		<% for categorization in @category.categorizations %>
+			<% if @category.websites.include?(categorization.website) %>
+				<%= categorization.website.title %> <%=reorder_buttons categorization %><br />
 			<% end %>
-		</p>
+		<% end %>
+	<% else %>
+		No categorizations
 	<% end %>
-	<p>
-		<%= f.submit 'Update' %>
-	</p>
-<% end %>
-
-<h3>Categorizations</h3>
-<% if @category.categorizations.length > 0 %>
-	<% for categorization in @category.categorizations %>
-		<% if @category.websites.include?(categorization.website) %>
-			<%= categorization.website.title %> <%=reorder_buttons categorization %><br />
+</div>
+<div class="box-header">Other Websites</div>
+<div class="box">
+	<% for website in Website.find(:all) %>
+		<% unless @category.websites.include?(website) %>
+			<%= website.title %> [ <%= link_to 'Add', category_categorizations_path(@category, :website_id => website.id), :method => :post %> ]<br />
 		<% end %>
 	<% end %>
-<% else %>
-	No categorizations
+</div>
+<% if logged_in? %>
+	<ul class="individual">
+		<li><%= link_to 'Show', @category %></li>
+		<li><%= link_to 'Destroy', @category, :confirm => 'Are you sure?', :method => :delete %></li>
+	</ul>
 <% end %>
-<h3>Other Websites</h3>
-<% for website in Website.find(:all) %>
-	<% unless @category.websites.include?(website) %>
-		<%= website.title %> [ <%= link_to 'Add', category_categorizations_path(@category, :website_id => website.id), :method => :post %> ]<br />
-	<% end %>
-<% end %>
-<br />
-<%= link_to 'Show', @category %> |
-<%= link_to 'Destroy', @category, :confirm => 'Are you sure?', :method => :delete %> |
-<%= link_to 'Back', categories_path %>

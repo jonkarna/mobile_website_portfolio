@@ -4,7 +4,9 @@
 		<li><%= link_to categorization.website.title, category_categorization_path(@category, categorization) %></li>
 	<% end %>
 </ul>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Destroy', @category, :confirm => 'Are you sure?', :method => :delete %> |
-<%= link_to 'Back', categories_path %>
+<% if logged_in? %>
+	<ul class="individual">
+		<li><%= link_to 'Edit', edit_category_path(@category) %></li>
+		<li><%= link_to 'Delete', @category, :confirm => 'Are you sure?', :method => :delete %></li>
+	</ul>
+<% end %>
