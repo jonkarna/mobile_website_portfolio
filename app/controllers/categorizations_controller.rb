@@ -1,6 +1,6 @@
 class CategorizationsController < ApplicationController
 	before_filter :authenticate, :except => [:show]
-	before_filter :define_back_link
+	before_filter :define_back_link, :except => [:create, :destroy]
 	
 	%w{move_higher move_lower move_to_top move_to_bottom}.each do |action|
 		define_method action do
@@ -16,13 +16,11 @@ class CategorizationsController < ApplicationController
 	end
 	
 	def show
-		@category = Category.find(params[:category_id])
 		@categorization = Categorization.find(params[:id])
 		@website = @categorization.website
 	end
 	
 	def edit
-		@category = Category.find(params[:category_id])
 		@categorization = Categorization.find(params[:id])
 		@website = @categorization.website
 	end
@@ -43,15 +41,14 @@ class CategorizationsController < ApplicationController
 	end
 	
 	def destroy
-		@category = Category.find(params[:category_id])
 		@categorization = Categorization.find(params[:id])
 		@categorization.destroy
-		redirect_to(edit_category_path(@category))
+		redirect_to(edit_category_path(@categorization.category))
 	end
 	
 	private
 	def define_back_link
-		@category = Category.find(params[:category_id])
-		@back_link = category_path(@category)
+		@categorization = Categorization.find(params[:id])
+		@back_link = category_path(@categorization.category)
 	end
 end

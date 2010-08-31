@@ -1,2 +1,5 @@
 <h1>Editing website</h1>
 <%= render :partial => "websites/form" %>
+<ul class="individual">
+	<li><%= link_to 'Delete', @website, :confirm => 'Are you sure?', :method => :delete %></li>
+</ul>

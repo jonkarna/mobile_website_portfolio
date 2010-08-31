@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :websites, :except => [:show]
-  map.resources :categories, :has_many => :categorizations, :collection => { :move_higher => :post }
+  map.resources :categories
+  map.resources :categorizations
   
   map.resources :sessions, :only => [:new, :create, :destroy]
   map.login "/login", :controller => :sessions, :action => :new
@@ -8,7 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   
   %w{move_higher move_lower move_to_top move_to_bottom}.each do |action|
     instance_eval <<-EOF
-      map.#{action}_category_categorization "categories/:category_id/categorizations/:id/#{action}", {:controller => "categorizations", :action => "#{action}"}
+      map.#{action}_categorization "categorizations/:id/#{action}", {:controller => "categorizations", :action => "#{action}"}
     EOF
   end
 

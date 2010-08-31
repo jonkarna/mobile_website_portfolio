@@ -16,7 +16,7 @@
 <div class="box">
 	<% for website in Website.find(:all) %>
 		<% unless @category.websites.include?(website) %>
-			<%= website.title %> [ <%= link_to 'Add', category_categorizations_path(@category, :website_id => website.id), :method => :post %> ]<br />
+			<%= website.title %> [ <%= link_to 'Add', categorizations_path({:category_id => @category.id, :website_id => website.id}), :method => :post %> ]<br />
 		<% end %>
 	<% end %>
 </div>
