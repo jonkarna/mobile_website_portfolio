@@ -1,0 +1,9 @@
+<ul>
+	<% @menu.each_with_index do |ele, index| %>
+		<li class="arrow">
+			<a href="/<%= index + 1 %>" title="">
+				<%= ele %>
+			</a>
+		</li>
+	<% end %>
+</ul>

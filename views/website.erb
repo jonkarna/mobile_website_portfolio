@@ -1,0 +1,21 @@
+<h1><%= @flashrecord.attributes["title"] %></h1>
+<br />
+<img alt="" src="<%= @flashrecord.attributes["image"] %>" />
+<ul class="field">
+	<li class="arrow"><h3>Website:</h3><a href="http://<%= @flashrecord.attributes["website"] %>" title=""><%= @flashrecord.attributes["website"] %></a></li>
+	<li><h3>Industry:</h3> <big><%= @flashrecord.attributes["industry"] %></big></li>
+	<li><h3>Launched:</h3> <big><%= @flashrecord.attributes["launched"] %></big></li>
+	<li><h3>Features:</h3> <big><%= @flashrecord.attributes["features"] %></big></li>
+</ul>
+<h1>Challenge</h1>
+<ul class="data">
+	<li>
+		<p><%= @flashrecord.attributes["challenge"] %></p>
+	</li>
+</ul>
+<h1>Solution</h1>
+<ul class="data">
+	<li>
+		<p><%= @flashrecord.attributes["solution"] %></p>
+	</li>
+</ul>

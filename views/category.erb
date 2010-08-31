@@ -1,0 +1,10 @@
+<h1><%= @categoryName %></h1>
+<ul>
+	<% @flashrecords.each_with_index do |ele, index| %>
+		<li class="arrow">
+			<a href="/<%= params[:category].to_i %>/<%= index + 1 %>" title="">
+				<%= ele.attributes["title"] %>
+			</a>
+		</li>
+	<% end %>
+</ul>
